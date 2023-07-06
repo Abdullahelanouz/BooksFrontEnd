@@ -8,7 +8,8 @@ import{HttpClient} from '@angular/common/http'
 export class BookService {
 
   url:string="https://localhost:44335/api/Books"
-  books:Book[] | undefined;
+  books:Book[];
+  book:Book;
   constructor(private http:HttpClient) {}
     getAllBooks(){
       this.http.get(this.url).toPromise().then(
@@ -17,6 +18,16 @@ export class BookService {
         }
       )
     }
+    postBook(){
+      return this.http.post(this.url,this.book)
+    }
+    // putBook(){
+    //   return this.http.put(this.url + "/" + this.book.id,this.book);
+    // }
+
+    // deleteBook(id){
+    //   return this.http.delete(this.url+"/"+id);
+    // }
    }
 
 
