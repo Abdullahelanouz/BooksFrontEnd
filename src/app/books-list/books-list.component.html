@@ -6,11 +6,12 @@
     <th>published Date</th>
   </thead>
 <tbody>
-  <tr *ngFor="let item of service.books">
+  <tr (click)="fillDtat(item)"    *ngFor="let item of service.books">
     <td>{{item.title}}</td>
     <td>{{item.author}}</td>
     <td>{{item.numberofPages}}</td>
     <td>{{item.publishedAt}}</td>
+    <th (click)="delete(item.id)"> <span class="btn btn-danger">Delete</span></th>
   </tr>
 </tbody>
 </table>

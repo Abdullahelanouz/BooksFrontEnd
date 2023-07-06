@@ -13,6 +13,17 @@ export class BooksListComponent implements OnInit {
   ngOnInit(): void {
     this.service.getAllBooks();
   }
+  fillDtat(item:any) {
+    this.service.book.id=item.id;
+    this.service.book.author=item.author;
+    this.service.book.title=item.title;
+    this.service.book.numberofPages=item.numberofPages;
+    this.service.book.publishedAt=item.publishedAt;
+  }
+  delete(id:any){
+    this.service.deleteBook(id).subscribe(res=>{
+      this.service.getAllBooks();
+    })
 
-
+  }
 }

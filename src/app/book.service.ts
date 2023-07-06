@@ -21,13 +21,13 @@ export class BookService {
     postBook(){
       return this.http.post(this.url,this.book)
     }
-    // putBook(){
-    //   return this.http.put(this.url + "/" + this.book.id,this.book);
-    // }
+    putBook(){
+      return this.http.put(this.url + "/" + this.book.id,this.book);
+    }
 
-    // deleteBook(id){
-    //   return this.http.delete(this.url+"/"+id);
-    // }
+    deleteBook(id:any){
+      return this.http.delete(this.url+"/"+id);
+    }
    }
 
 
